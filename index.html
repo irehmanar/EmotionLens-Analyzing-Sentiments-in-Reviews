@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Amazon Review Sentiment Analysis Tool" />
+        <meta name="author" content="" />
+        <title>Amazon Review Sentiment Analysis</title>
+        <!-- Font Awesome icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .masthead {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+                text-align: center;
+                color: white;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/1080');
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-position: center center;
+                background-size: cover;
+            }
+            .form-detail {
+                background: white;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                max-width: 800px;
+                margin: 40px auto;
+            }
+            .input-text {
+                width: 100%;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .review-text {
+                min-height: 150px;
+            }
+            .register {
+                background: #FF9900;
+                color: white;
+                padding: 15px 40px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                width: 100%;
+            }
+            .register:hover {
+                background: #FF8C00;
+            }
+            .rating-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .star {
+                color: #FF9900;
+                font-size: 24px;
+                cursor: pointer;
+                padding: 0 5px;
+            }
+            .form-group {
+                margin-bottom: 20px;
+            }
+            .amazon-theme {
+                color: #FF9900;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/"><i class="fab fa-amazon amazon-theme"></i> Review Analysis</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Page Header-->
+        <header class="masthead">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Amazon Review Analyzer</h1>
+                            <span class="subheading">Analyze the sentiment of product reviews</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="form-detail">
+                <form action="/predict" method="post">
+                    <h2 class="text-center mb-4">Review Analysis Form</h2>
+                    
+                    <!-- <div class="form-group">
+                        <label for="product_name">Product Id:</label>
+                        <input type="text" name="product_id" id="product_id" class="input-text" placeholder="Enter product id" required>
+                    </div> -->
+
+                   
+                   
+                
+
+                    <div class="form-group">
+                        <label for="review_text">Review Text:</label>
+                        <textarea name="review_text" id="review_text" class="input-text review-text" placeholder="Paste the product review here..." required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <input type="submit" name="analyze" class="register" value="Analyze Sentiment">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Amazon Review Sentiment Analysis Tool</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Star Rating JS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const stars = document.querySelectorAll('.star');
+                const ratingInput = document.getElementById('rating');
+
+                stars.forEach(star => {
+                    star.addEventListener('click', function() {
+                        const rating = this.dataset.rating;
+                        ratingInput.value = rating;
+                        
+                        // Update stars visual
+                        stars.forEach(s => {
+                            const starRating = s.dataset.rating;
+                            if (starRating <= rating) {
+                                s.style.color = '#FF9900';
+                            } else {
+                                s.style.color = '#ddd';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
