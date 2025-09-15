@@ -85,10 +85,6 @@ The dataset used for this project consists of Amazon product reviews from the El
    ```bash
    python preprocess_and_train.py
    ```
-3. Run the demo:
-   ```bash
-   python demo.py
-   ```
 
 ---
 
