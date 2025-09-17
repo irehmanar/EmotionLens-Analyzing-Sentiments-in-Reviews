@@ -68,4 +68,4 @@ The dataset used for this project consists of Amazon product reviews from the El
 
 ## Report
 You can download the full project report here:  
-[Download Report](report.pdf)
+[Download Report](docs/Report.pdf)
