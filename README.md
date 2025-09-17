@@ -64,39 +64,8 @@ The dataset used for this project consists of Amazon product reviews from the El
 2. **Clustering**: Groups similar words to identify trends and patterns.
 3. **Model Comparison**: Benchmarks multiple algorithms for performance.
 4. **Saved Model**: The trained Logistic Regression model is saved for deployment.
-
 ---
 
-## Installation and Usage
-### Prerequisites
-1. Python (version 3.8 or higher).
-2. Install required libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Running the Project
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/reviewintel.git
-   cd reviewintel
-   ```
-2. Preprocess the dataset and train models:
-   ```bash
-   python preprocess_and_train.py
-   ```
-
----
-
-## Contributions
-Contributions are welcome! Please feel free to fork this repository, create feature branches, and submit pull requests.
-
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-## Acknowledgments
-Special thanks to the open-source community and the contributors of Scikit-learn, NLTK, and Pandas for providing excellent tools and libraries to make this project successful.
+## Report
+You can download the full project report here:  
+[Download Report](report.pdf)
